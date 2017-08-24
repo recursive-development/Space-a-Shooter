@@ -13,12 +13,12 @@ import com.shako.spaceshooter.screens.menu.MenuScreen;
  * @author Alexey Stepchenko
  * @author Timur Kashapov
  */
-public class SGame extends Game {
+public class GameApp extends Game {
 
     @Override
     public void create() {
 
         // Устанавливаем начальный экран при запуске приложения.
-        setScreen(new MenuScreen());
+        setScreen(new MenuScreen(this));
     }
 }

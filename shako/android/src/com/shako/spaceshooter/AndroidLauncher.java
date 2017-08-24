@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 // --- ---
-import com.shako.spaceshooter.SGame;
+
 
 /** */
 public class AndroidLauncher extends AndroidApplication {
@@ -22,6 +22,6 @@ public class AndroidLauncher extends AndroidApplication {
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 
         //
-        initialize(new SGame(), config);
+        initialize(new GameApp(), config);
 	}
 }
