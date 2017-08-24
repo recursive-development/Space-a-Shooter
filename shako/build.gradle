@@ -1,5 +1,5 @@
+// Базовый скрипт сборки
 buildscript {
-    
 
     repositories {
         mavenLocal()
@@ -8,16 +8,16 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
-        
+        classpath 'com.android.tools.build:gradle:2.3.2'
 
     }
 }
-
+// Для все проектов
 allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
 
+    // Управление версиями для сборки
     version = '1.0'
     ext {
         appName = "shako"
@@ -28,6 +28,7 @@ allprojects {
         aiVersion = '1.8.0'
     }
 
+    // Центральные исходные репозитории
     repositories {
         mavenLocal()
         mavenCentral()
@@ -36,6 +37,7 @@ allprojects {
     }
 }
 
+// Сборка проекта под десктоп
 project(":desktop") {
     apply plugin: "java"
 
@@ -48,6 +50,7 @@ project(":desktop") {
     }
 }
 
+// Сборка проекта под Android
 project(":android") {
     apply plugin: "android"
 
@@ -65,16 +68,31 @@ project(":android") {
     }
 }
 
+// Сбоорка ядра проекта
 project(":core") {
     apply plugin: "java"
 
-
     dependencies {
+        compile project(":engine")
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         
     }
 }
 
-tasks.eclipse.doLast {
-    delete ".project"
+// Сборка движка проекта
+project(":engine") {
+    apply plugin: "java"
+
+    sourceCompatibility = 1.6
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+    sourceSets.main.java.srcDirs = [ "src/" ]
+
+    dependencies {
+        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+
+    }
 }
+
+// Задача ???
+tasks.eclipse.doLast { delete ".project" }
