@@ -11,10 +11,11 @@ import com.badlogic.gdx.math.Vector2;
  * - rotate()    Поворот.
  * - scale()     Масштабирование.
  *
+ * Переходы между ... и ...
+ *
  * @author Alexey Stepchenko
  * @author Timur Kashapov
  */
-
 public class Matrix {
 
     /** */
@@ -22,7 +23,7 @@ public class Matrix {
         // TO-DO
     }
 
-    /** */
+    /** ТЕСТИРОВАНИЕ */
     public static void transformation() {
 
         // Векторы
@@ -65,5 +66,18 @@ public class Matrix {
         vector2.mul(matrix3x3);
     }
 
-    
+    /** Расчёт матрицы перехода 3x3 */
+    public static void calcTransitionMatrix(Matrix3 mat, Rect src, Rect dst) {
+        float scaleX = dst.getWidth() / src.getWidth();
+        float scaleY = dst.getHeight() / src.getHeight();
+        mat.idt().translate(dst.pos.x, dst.pos.y).scale(scaleX, scaleY).translate(-src.pos.x, -src.pos.y);
+    }
+
+    /** Расчёт матрицы перехода 4x4 */
+    public static void calcTransitionMatrix(Matrix4 mat, Rect src, Rect dst) {
+        float scaleX = dst.getWidth() / src.getWidth();
+        float scaleY = dst.getHeight() / src.getHeight();
+        mat.idt().translate(dst.pos.x, dst.pos.y, 0f).scale(scaleX, scaleY, 1f).translate(-src.pos.x, -src.pos.y, 0f);
+    }
+
 }
