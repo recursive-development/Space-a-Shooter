@@ -3,6 +3,7 @@ package com.shako.spaceshooter.screens.menu;
 // --- ---
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 // --- ---
 import com.shako.game.engine.Base2DScreen;
@@ -19,6 +20,9 @@ public class MenuScreen extends Base2DScreen {
     /** */
     private SpriteBatch batch;
 
+    /** */
+    private Sprite heroShip;
+
     /** Фоновое изображение для экрана меню. */
     private Texture bkgd;
 
@@ -27,8 +31,9 @@ public class MenuScreen extends Base2DScreen {
         super(game);
 
         batch = new SpriteBatch();
+        batch.getProjectionMatrix().idt();
 
-        bkgd  = new Texture("sunset_1920x1200.jpg");
+        bkgd     = new Texture("sunset_1920x1200.jpg");
     }
 
     @Override
@@ -38,7 +43,7 @@ public class MenuScreen extends Base2DScreen {
         // Начало отрисовки
         batch.begin();
 
-        batch.draw(bkgd, 0, 0);
+        batch.draw(bkgd, -1f, -1f, 2f, 2f);
 
         batch.end();
         // Конец отрисовки
