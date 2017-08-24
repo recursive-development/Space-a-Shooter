@@ -10,13 +10,20 @@ package com.shako.spaceshooter;
  */
 //*************************************************************************************************
 
+// --- libGDX классы ---
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+// --- Кастомные классы ---
+import com.shako.game.engine.Base2DScreen;
 
+/** */
 public class Main extends ApplicationAdapter {
+
+    /** */
+    Base2DScreen screen;
 
 	/** */
 	private SpriteBatch batch;
