@@ -1,1 +1,0 @@
-# SpэceShooter'ы
