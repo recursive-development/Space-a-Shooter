@@ -4,7 +4,7 @@ package com.shako.spaceshooter.desktop;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 // --- ----
-import com.shako.spaceshooter.SGame;
+import com.shako.spaceshooter.GameApp;
 
 /** */
 public class DesktopLauncher {
@@ -16,7 +16,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
         //
-        new LwjglApplication(new SGame(), config);
+        new LwjglApplication(new GameApp(), config);
 
 	}
 }
