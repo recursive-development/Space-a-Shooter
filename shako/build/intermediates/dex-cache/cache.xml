@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="Y:\tk\wrk\gbs\2-wrk\2-android\game-jam-tech\core\build\libs\core-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a39b336b7ed10d9b04126ee1a26de43b5093cc20">
+        <dex dex="Y:\tk\wrk\gbs\2-wrk\2-android\game-jam-tech\android\build\intermediates\pre-dexed\debug\core-1.0_99fd13cc065e2b712b6adcaad181d7d3264327f1.jar" />
+    </item>
+
+</items>
