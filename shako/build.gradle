@@ -1,3 +1,4 @@
+// Базовый скрипт сборки
 buildscript {
     
 
@@ -13,11 +14,12 @@ buildscript {
 
     }
 }
-
+// Для все проектов
 allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
 
+    // Управление версиями для сборки
     version = '1.0'
     ext {
         appName = "shako"
@@ -28,6 +30,7 @@ allprojects {
         aiVersion = '1.8.0'
     }
 
+    // Центральные исходные репозитории
     repositories {
         mavenLocal()
         mavenCentral()
@@ -36,6 +39,7 @@ allprojects {
     }
 }
 
+// Сборка проекта под десктоп
 project(":desktop") {
     apply plugin: "java"
 
@@ -48,6 +52,7 @@ project(":desktop") {
     }
 }
 
+// Сборка проекта под Android
 project(":android") {
     apply plugin: "android"
 
@@ -65,6 +70,8 @@ project(":android") {
     }
 }
 
+
+// Сбоорка ядра проекта
 project(":core") {
     apply plugin: "java"
 
@@ -75,6 +82,5 @@ project(":core") {
     }
 }
 
-tasks.eclipse.doLast {
-    delete ".project"
-}
+// Задача ???
+tasks.eclipse.doLast { delete ".project" }
