@@ -8,7 +8,6 @@ import com.badlogic.gdx.InputProcessor;
 
 
 /**
- *
  * Базовый класс для экранов приложения.
  *
  * @author Alexey Stepchenko

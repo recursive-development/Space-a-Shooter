@@ -1,13 +1,12 @@
 package com.shako.spaceshooter;
 
-// --- ---
+// --- libGDX ---
 import com.badlogic.gdx.Game;
 
-// --- ---
+// --- Customs ---
 import com.shako.spaceshooter.screens.menu.MenuScreen;
 
 /**
- *
  * Главный начальный класс при запуске приложения.
  *
  * @author Alexey Stepchenko

@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.shako.game.engine.Base2DScreen;
 
 /**
- *
  * Экран для меню приложения.
  *
  * @author Alexey Stepchenko
