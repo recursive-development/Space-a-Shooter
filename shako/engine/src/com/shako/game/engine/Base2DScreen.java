@@ -1,6 +1,7 @@
 package com.shako.game.engine;
 
 // --- ---
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.InputProcessor;
 
@@ -14,6 +15,14 @@ import com.badlogic.gdx.InputProcessor;
  *
  */
 public class Base2DScreen implements Screen, InputProcessor {
+
+    /** */
+    protected final Game game;
+
+    /** */
+    public Base2DScreen(Game game) {
+        this.game = game;
+    }
 
     @Override
     public boolean keyDown(int keycode) {
@@ -95,6 +104,7 @@ public class Base2DScreen implements Screen, InputProcessor {
     @Override
     public void hide() {
         System.out.println("hide");
+        dispose();
 
     }
 

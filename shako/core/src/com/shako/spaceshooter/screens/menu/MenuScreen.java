@@ -1,6 +1,7 @@
 package com.shako.spaceshooter.screens.menu;
 
 // --- ---
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 // --- ---
@@ -16,13 +17,15 @@ import com.shako.game.engine.Base2DScreen;
  */
 public class MenuScreen extends Base2DScreen {
 
+    /** */
     private SpriteBatch batch;
 
     /** Фоновое изображение для экрана меню. */
     private Texture bkgd;
 
     /** */
-    public MenuScreen() {
+    public MenuScreen(Game game) {
+        super(game);
 
         batch = new SpriteBatch();
 

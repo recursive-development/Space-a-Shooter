@@ -19,6 +19,6 @@ public class SGame extends Game {
     public void create() {
 
         // Устанавливаем начальный экран при запуске приложения.
-        setScreen(new MenuScreen());
+        setScreen(new MenuScreen(this));
     }
 }
