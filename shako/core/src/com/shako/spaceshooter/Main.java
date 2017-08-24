@@ -1,5 +1,15 @@
 package com.shako.spaceshooter;
 
+//*************************************************************************************************
+/*
+*
+* 1. Полностью разобраться с кодом урока.
+* 2. В MenuScreen перехватить все события ввода, залогировать их в консоль и изучить их работу.
+* 3***. Дописать Base2DScreen чтобы он рисовал текстуры пропорционально их размеру.
+*
+ */
+//*************************************************************************************************
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -13,13 +23,23 @@ public class Main extends ApplicationAdapter {
 
 	/** */
 	private Texture img;
-	
+
+    /*
+    *
+    *
+    *
+    */
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 	}
 
+	/*
+	*
+	*
+	*
+	*/
 	@Override
 	public void render () {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
@@ -28,7 +48,12 @@ public class Main extends ApplicationAdapter {
 		batch.draw(img, 0, 0);
 		batch.end();
 	}
-	
+
+	/*
+	*
+	*
+	*
+	*/
 	@Override
 	public void dispose () {
 		batch.dispose();
