@@ -6,7 +6,11 @@ import com.badlogic.gdx.InputProcessor;
 
 /**
  *
- * Created by shako on 24-Aug-17.
+ * Базовый класс для экранов приложения.
+ *
+ * @author Alexey Stepchenko
+ * @author Timur Kashapov
+ *
  */
 public class Base2DScreen implements Screen, InputProcessor {
 
