@@ -22,7 +22,10 @@ public class Main extends ApplicationAdapter {
 	private SpriteBatch batch;
 
 	/** */
-	private Texture img;
+	private Texture
+            logo,
+            bgnd,
+            trgt;
 
     /*
     *
@@ -32,7 +35,10 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+
+        bgnd = new Texture("sunset_1920x1200.jpg");
+		logo   = new Texture("badlogic.jpg");
+        trgt = new Texture("target.png");
 	}
 
 	/*
@@ -42,10 +48,18 @@ public class Main extends ApplicationAdapter {
 	*/
 	@Override
 	public void render () {
+
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
 		batch.begin();
-		batch.draw(img, 0, 0);
+
+        batch.draw(bgnd, 0, 0);
+		batch.draw(logo, 0, 0);
+        batch.draw(trgt, 0, 0);
+
+
+
 		batch.end();
 	}
 
@@ -57,6 +71,7 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
+		logo.dispose();
 	}
 }
+
