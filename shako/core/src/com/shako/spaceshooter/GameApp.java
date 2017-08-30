@@ -5,6 +5,7 @@ import com.badlogic.gdx.Game;
 
 // --- Customs ---
 import com.shako.spaceshooter.screens.menu.MenuScreen;
+import com.shako.spaceshooter.screens.game.GameScreen;
 
 /**
  * Главный начальный класс при запуске приложения.
@@ -18,6 +19,7 @@ public class GameApp extends Game {
     public void create() {
 
         // Устанавливаем начальный экран при запуске приложения.
-        setScreen(new MenuScreen(this));
+        //setScreen(new MenuScreen(this));
+        setScreen(new GameScreen(this));
     }
 }
