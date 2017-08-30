@@ -20,9 +20,6 @@ public class MenuScreen extends Base2DScreen {
     /** */
     private SpriteBatch batch;
 
-    /** */
-    private Sprite heroShip;
-
     /** Фоновое изображение для экрана меню. */
     private Texture bkgd;
 
@@ -33,7 +30,7 @@ public class MenuScreen extends Base2DScreen {
         batch = new SpriteBatch();
         batch.getProjectionMatrix().idt();
 
-        bkgd     = new Texture("sunset_1920x1200.jpg");
+        bkgd     = new Texture("atmosphere/bk-menu.jpg");
     }
 
     @Override
