@@ -16,10 +16,10 @@ import com.badlogic.gdx.math.Vector2;
  * @author Alexey Stepchenko
  * @author Timur Kashapov
  */
-public class Matrix {
+public class MatrixUtils {
 
     /** */
-    private Matrix() {
+    private MatrixUtils() {
         // TO-DO
     }
 
@@ -27,21 +27,26 @@ public class Matrix {
     public static void transformation() {
 
         // Векторы
+        //
         Vector2 vector2 = new Vector2();
 
         // Создание матрицы 3x3 (работа с 2D):
+        //
         // | 0 0 0 |
         // | 0 0 0 |
         // | 0 0 0 |
         Matrix3 matrix3x3 = new Matrix3();
 
         // Приводим матрицу 3х3 к "единичному" ввиду.
+        // idt() - метод приводит матрицу к единичному ввиду.
+        //
         // | 1 0 0 |
         // | 0 1 0 |
         // | 0 0 1 |
         matrix3x3.idt();
 
         // Создание матрицы 4x4 (работа с 3D):
+        //
         // | 0 0 0 0 |
         // | 0 0 0 0 |
         // | 0 0 0 0 |
@@ -49,6 +54,7 @@ public class Matrix {
         Matrix4 matrix4x4 = new Matrix4();
 
         // Методы для преобразования матриц:
+        //
         // translate()
         // scale()
         // rotate()
