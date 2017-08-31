@@ -24,6 +24,11 @@ public class MenuScreen extends Base2DScreen {
     private Texture bkgd;
 
     /** */
+    private Texture
+            playButton,
+            exitButton;
+
+    /** */
     public MenuScreen(Game game) {
         super(game);
 

@@ -19,7 +19,7 @@ public class GameApp extends Game {
     public void create() {
 
         // Устанавливаем начальный экран при запуске приложения.
-        //setScreen(new MenuScreen(this));
+//        setScreen(new MenuScreen(this));
         setScreen(new GameScreen(this));
     }
 }
