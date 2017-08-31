@@ -1,49 +1,54 @@
-package com.shako.spaceshooter.screens.menu;
+package com.shako.spaceshooter.screens.game;
 
-// --- ---
+// --- libGDX ---
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-// --- ---
+
+// --- Customs ---
 import com.shako.game.engine.Base2DScreen;
 
 /**
- * Экран для меню приложения.
  *
- * @author Alexey Stepchenko
  * @author Timur Kashapov
- *
  */
-public class MenuScreen extends Base2DScreen {
+
+public class GameScreen extends Base2DScreen {
 
     /** */
     private SpriteBatch batch;
 
-    /** Фоновое изображение для экрана меню. */
+    /** */
+    private Sprite heroShip;
+
+    /** Фоновое изображение для экрана игры. */
     private Texture bkgd;
 
-    /** */
-    public MenuScreen(Game game) {
+    /**
+     *
+     * @param game libGDX Game class
+     */
+    public GameScreen(Game game) {
         super(game);
 
         batch = new SpriteBatch();
         batch.getProjectionMatrix().idt();
 
-        bkgd     = new Texture("atmosphere/bk-menu.jpg");
+        heroShip = new Sprite(new Texture("heroShip.gif"));
+        bkgd     = new Texture("atmosphere/bk-game.png");
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
 
-        // Начало отрисовки
         batch.begin();
 
-        batch.draw(bkgd, -1f, -1f, 2f, 2f);
+        batch.draw(bkgd, -1.0f, -1.0f, 2.0f, 2.0f);
+        batch.draw(heroShip, 0.0f, 0.0f, 0.2f, 0.2f);
 
         batch.end();
-        // Конец отрисовки
     }
 
     @Override
@@ -52,9 +57,13 @@ public class MenuScreen extends Base2DScreen {
     }
 
     @Override
+    public void pause() {
+        super.pause();
+    }
+
+    @Override
     public void dispose() {
 
-        // Освобождаем ресурсы
         batch.dispose();
         super.dispose();
     }
