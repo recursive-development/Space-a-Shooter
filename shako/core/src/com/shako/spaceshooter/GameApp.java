@@ -8,7 +8,7 @@ import com.shako.spaceshooter.screens.menu.MenuScreen;
 import com.shako.spaceshooter.screens.game.GameScreen;
 
 /**
- * Главный начальный класс при запуске приложения.
+ * Класс для запуска приложения.
  *
  * @author Alexey Stepchenko
  * @author Timur Kashapov

@@ -35,7 +35,8 @@ public class GameScreen extends Base2DScreen {
         batch = new SpriteBatch();
         batch.getProjectionMatrix().idt();
 
-        bkgd = new Texture("atmosphere/bk-game.png");
+        heroShip = new Sprite(new Texture("heroShip.gif"));
+        bkgd     = new Texture("atmosphere/bk-game.png");
     }
 
     @Override
@@ -43,7 +44,10 @@ public class GameScreen extends Base2DScreen {
         super.render(delta);
 
         batch.begin();
+
         batch.draw(bkgd, -1.0f, -1.0f, 2.0f, 2.0f);
+        batch.draw(heroShip, 0.0f, 0.0f, 0.2f, 0.2f);
+
         batch.end();
     }
 
@@ -59,6 +63,8 @@ public class GameScreen extends Base2DScreen {
 
     @Override
     public void dispose() {
+
+        batch.dispose();
         super.dispose();
     }
 }
