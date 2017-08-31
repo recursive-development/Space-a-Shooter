@@ -82,7 +82,10 @@ public class MatrixUtils {
         float scaleY = dst.getHeight() / src.getHeight();
 
         //
-        mat.idt().translate(dst.pos.x, dst.pos.y).scale(scaleX, scaleY).translate(-src.pos.x, -src.pos.y);
+        mat.idt()
+                .translate(dst.pos.x, dst.pos.y)
+                .scale(scaleX, scaleY)
+                .translate(-src.pos.x, -src.pos.y);
     }
 
     /** Расчёт матрицы перехода 4x4 */
@@ -95,7 +98,10 @@ public class MatrixUtils {
         float scaleY = dst.getHeight() / src.getHeight();
 
         //
-        mat.idt().translate(dst.pos.x, dst.pos.y, 0f).scale(scaleX, scaleY, 1f).translate(-src.pos.x, -src.pos.y, 0f);
+        mat.idt()
+                .translate(dst.pos.x, dst.pos.y, 0f)
+                .scale(scaleX, scaleY, 1f)
+                .translate(-src.pos.x, -src.pos.y, 0f);
     }
 
 }

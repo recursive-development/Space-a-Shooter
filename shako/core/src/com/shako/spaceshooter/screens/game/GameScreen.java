@@ -22,6 +22,12 @@ public class GameScreen extends Base2DScreen {
     /** */
     private Sprite heroShip;
 
+    /** */
+    private float
+            up    = 0.01f,
+            down  = 0.01f,
+            dv    = 0.01f;
+
     /** Фоновое изображение для экрана игры. */
     private Texture bkgd;
 
@@ -35,8 +41,9 @@ public class GameScreen extends Base2DScreen {
         batch = new SpriteBatch();
         batch.getProjectionMatrix().idt();
 
-        heroShip = new Sprite(new Texture("heroShip.gif"));
-        bkgd     = new Texture("atmosphere/bk-game.png");
+        heroShip = new Sprite(new Texture("heroship.gif"));
+//        bkgd     = new Texture("atmosphere/bk-game.png");
+        bkgd     = new Texture("space/a.jpg");
     }
 
     @Override
@@ -46,7 +53,7 @@ public class GameScreen extends Base2DScreen {
         batch.begin();
 
         batch.draw(bkgd, -1.0f, -1.0f, 2.0f, 2.0f);
-        batch.draw(heroShip, 0.0f, 0.0f, 0.2f, 0.2f);
+        batch.draw(heroShip, -0.5f, -0.5f, 0.5f, 0.5f);
 
         batch.end();
     }
