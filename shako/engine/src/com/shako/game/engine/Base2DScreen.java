@@ -62,7 +62,7 @@ public class Base2DScreen implements Screen, InputProcessor {
 
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
-        System.out.printf("mouseMoved  x:%d y:%d\n", screenX ,screenY);
+//        System.out.printf("mouseMoved  x:%d y:%d\n", screenX ,screenY);
         return false;
     }
 

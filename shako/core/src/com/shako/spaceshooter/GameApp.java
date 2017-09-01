@@ -2,6 +2,7 @@ package com.shako.spaceshooter;
 
 // --- libGDX ---
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 
 // --- Customs ---
 import com.shako.spaceshooter.screens.menu.MenuScreen;
@@ -14,6 +15,11 @@ import com.shako.spaceshooter.screens.game.GameScreen;
  * @author Timur Kashapov
  */
 public class GameApp extends Game {
+
+    /** */
+    public GameApp() {
+
+    }
 
     @Override
     public void create() {
