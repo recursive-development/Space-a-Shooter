@@ -1,8 +1,14 @@
 package com.shako.spaceshooter.actors;
 
 /**
- * Created by shako on 02-Sep-17.
+ *
+ * @author Timur Kashapov
  */
+public class Enemy extends AActor {
 
-public class Enemy {
-}
+    /** */
+    public Enemy() {
+
+    } // Enemy()
+
+} // Enemy
