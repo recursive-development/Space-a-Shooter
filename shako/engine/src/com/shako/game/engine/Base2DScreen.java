@@ -84,6 +84,9 @@ public class Base2DScreen implements Screen, InputProcessor {
     @Override
     public void render(float delta) {
 
+//        Gdx.graphics;
+        System.out.println(Gdx.graphics.getGLVersion());
+
     }
 
     @Override
