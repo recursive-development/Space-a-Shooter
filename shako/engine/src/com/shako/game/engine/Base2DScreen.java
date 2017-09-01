@@ -26,19 +26,19 @@ public class Base2DScreen implements Screen, InputProcessor {
 
     @Override
     public boolean keyDown(int keycode) {
-        System.out.printf("keyDown code[%d]", keycode);
+        //System.out.printf("keyDown code[%d]\n", keycode);
         return false;
     }
 
     @Override
     public boolean keyUp(int keycode) {
-        System.out.printf("ketUp code[%d]", keycode);
+        //System.out.printf("ketUp code[%d]\n", keycode);
         return false;
     }
 
     @Override
     public boolean keyTyped(char character) {
-        System.out.printf("KeyTyped [%c]\n", character);
+        //System.out.printf("KeyTyped [%c]\n", character);
         return false;
     }
 
