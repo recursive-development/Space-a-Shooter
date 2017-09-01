@@ -1,6 +1,7 @@
 package com.shako.spaceshooter.screens.game;
 
 // --- libGDX ---
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -15,6 +16,10 @@ import com.shako.game.engine.Base2DScreen;
  */
 
 public class GameScreen extends Base2DScreen {
+
+    /** */
+    private long memUsageJavaHeap = Gdx.app.getJavaHeap();
+    private long memUsageNativeHeap = Gdx.app.getNativeHeap();
 
     /** */
     private SpriteBatch batch;
@@ -38,6 +43,24 @@ public class GameScreen extends Base2DScreen {
      */
     public GameScreen(Game game) {
         super(game);
+
+        switch (Gdx.app.getType()) {
+            case Desktop:
+                System.out.println(memUsageJavaHeap);
+                System.out.println(memUsageNativeHeap);
+                break;
+            case Android:
+                System.out.println(memUsageJavaHeap);
+                System.out.println(memUsageNativeHeap);
+                System.out.println(Gdx.app.getVersion());
+                break;
+            case WebGL:
+                // Code for WebGL application
+                break;
+            default:
+                // Unhandled (new?) platform application
+                break;
+        }
 
         batch = new SpriteBatch();
         batch.getProjectionMatrix().idt();
@@ -81,6 +104,8 @@ public class GameScreen extends Base2DScreen {
         batch.draw(heroShip, dvx, dvy, 0.5f, 0.5f);
 
         batch.end();
+
+
     }
 
     @Override
