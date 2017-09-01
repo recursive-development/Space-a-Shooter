@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4613d228-b31b-42e1-b2a5-e657d97e7766" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/engine/build/libs/engine-1.0.jar" afterPath="$PROJECT_DIR$/engine/build/libs/engine-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.MD" afterPath="$PROJECT_DIR$/README.MD" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img.png" afterPath="$PROJECT_DIR$/gameplay.png" />
     </list>
     <ignored path="shako.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameScreen.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/shako/spaceshooter/screens/game/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -97,6 +93,16 @@
                 <element signature="method#render#0;class#GameScreen#0" expanded="false" />
                 <element signature="method#dispose#0;class#GameScreen#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.MD" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.MD">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -3436,14 +3442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.MD">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameplay.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3460,6 +3458,14 @@
             <element signature="method#render#0;class#GameScreen#0" expanded="false" />
             <element signature="method#dispose#0;class#GameScreen#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.MD">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
