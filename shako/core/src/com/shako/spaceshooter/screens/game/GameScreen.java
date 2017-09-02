@@ -5,9 +5,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 // --- Customs ---
 import com.shako.game.engine.Base2DScreen;
@@ -34,11 +34,17 @@ public class GameScreen extends Base2DScreen {
     private Sprite heroShip;
 
     /** */
+    private Texture texture;
+
+    /** */
     private float
             up     = 0.01f,
             down   = 0.01f,
             dvx    = -0.1f,
             dvy    = -0.1f;
+
+    /** Коэффеиент поворота */
+    private float rot;
 
     /** Фоновое изображение для экрана игры. */
     private Texture bkgd;
@@ -53,9 +59,11 @@ public class GameScreen extends Base2DScreen {
         batch = new SpriteBatch();
         batch.getProjectionMatrix().idt();
 
-        heroShip = new Sprite(new Texture("heroship.gif"));
-//        bkgd     = new Texture("atmosphere/bk-game.png");
-        bkgd     = new Texture("space/a.jpg");
+        texture = new Texture(Gdx.files.internal("android/assets/heroship.gif"));
+
+        heroShip = new Sprite(texture);
+
+        bkgd     = new Texture(Gdx.files.internal("android/assets/space/a.jpg"));
     }
 
     @Override
@@ -85,6 +93,8 @@ public class GameScreen extends Base2DScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
+
+
 
         batch.begin();
 
