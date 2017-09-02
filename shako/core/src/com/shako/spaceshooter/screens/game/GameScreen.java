@@ -22,7 +22,10 @@ public class GameScreen extends Base2DScreen {
     /** */
     private Label
             label01,
-            label02;
+            label02,
+            label03,
+            label04,
+            label05;
 
     /** */
     private SpriteBatch batch;
