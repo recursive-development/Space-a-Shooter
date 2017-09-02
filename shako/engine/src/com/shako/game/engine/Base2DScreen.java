@@ -5,6 +5,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.InputProcessor;
+import com.shako.game.engine.stats.GameAppStats;
 
 
 /**
@@ -20,8 +21,12 @@ public class Base2DScreen implements Screen, InputProcessor {
     protected final Game game;
 
     /** */
+    private GameAppStats gameAppStats = new GameAppStats();
+
+    /** */
     public Base2DScreen(Game game) {
         this.game = game;
+        gameAppStats.start();
     }
 
     @Override
