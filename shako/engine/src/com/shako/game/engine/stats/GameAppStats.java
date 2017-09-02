@@ -16,16 +16,36 @@ public class GameAppStats extends Thread {
             memUsageNativeHeap;
 
     /** */
+    private String openGlVersion;
+
+    /** */
+    private int
+            width,
+            height;
+
+    /** */
+    private int fps;
+    private float delta;
+
+    /** */
     public GameAppStats() {
 
         setDaemon(true);
+
+        openGlVersion      = Gdx.graphics.getGLVersion().getVendorString();
 
     } // GameAppStats()
 
     /** */
     private void getStats() {
-        memUsageJavaHeap = Gdx.app.getJavaHeap();
+
+        memUsageJavaHeap   = Gdx.app.getJavaHeap();
         memUsageNativeHeap = Gdx.app.getNativeHeap();
+
+        width  = Gdx.graphics.getWidth();
+        height = Gdx.graphics.getHeight();
+        fps    = Gdx.graphics.getFramesPerSecond();
+        delta  = Gdx.graphics.getDeltaTime();
     } // getStats()
 
     /** */
@@ -38,6 +58,7 @@ public class GameAppStats extends Thread {
             case Desktop:
                 System.out.printf("Java heap: %d\n", memUsageJavaHeap);
                 System.out.printf("Java heap (native): %d\n", memUsageNativeHeap);
+                System.out.printf("OpenGL vendor: %s\n", openGlVersion);
                 break;
             case Android:
                 // System.out.printf("Android API version: %d\n", Gdx.app.getVersion());
@@ -55,13 +76,14 @@ public class GameAppStats extends Thread {
     public void run() {
         super.run();
 
-        while (true) {
+        show();
 
-            getStats();
-            // show();
-        }
+//        while (true) {
+//
+//            getStats();
+//            // show();
+//        }
     } // run()
-
 
     /** */
     public long getMemUsageJavaHeap() {
@@ -72,4 +94,24 @@ public class GameAppStats extends Thread {
     public long getMemUsageNativeHeap() {
         return memUsageNativeHeap;
     } // getMemUsageNativeHeap()
+
+    /** */
+    public int getWidth() {
+        return width;
+    } // getWidth()
+
+    /** */
+    public int getHeight() {
+        return height;
+    } // getHeight()
+
+    /** */
+    public int getFps() {
+        return fps;
+    } // getFps()
+
+    /** */
+    public float getDelta() {
+        return delta;
+    } // getDelta()
 } // GameAppStats

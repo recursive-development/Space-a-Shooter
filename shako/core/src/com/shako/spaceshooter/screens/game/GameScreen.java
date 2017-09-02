@@ -3,11 +3,13 @@ package com.shako.spaceshooter.screens.game;
 // --- libGDX ---
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 // --- Customs ---
 import com.shako.game.engine.Base2DScreen;
@@ -20,25 +22,24 @@ import com.shako.game.engine.Base2DScreen;
 public class GameScreen extends Base2DScreen {
 
     /** */
-    private Label
-            label01,
-            label02;
-
-    /** */
     private SpriteBatch batch;
 
     /** */
     private Sprite heroShip;
 
     /** */
+    private Texture texture;
+
+    /** */
     private float
-            up     = 0.01f,
-            down   = 0.01f,
-            dvx    = -0.1f,
-            dvy    = -0.1f;
+            dvx    = -0.15f,
+            dvy    = -1.0f;
 
     /** Фоновое изображение для экрана игры. */
     private Texture bkgd;
+
+    /** */
+    private BitmapFont font = new BitmapFont();
 
     /**
      *
@@ -50,9 +51,12 @@ public class GameScreen extends Base2DScreen {
         batch = new SpriteBatch();
         batch.getProjectionMatrix().idt();
 
-        heroShip = new Sprite(new Texture("heroship.gif"));
-//        bkgd     = new Texture("atmosphere/bk-game.png");
-        bkgd     = new Texture("space/a.jpg");
+        texture = new Texture(Gdx.files.internal("android/assets/heroship.gif"));
+
+        heroShip = new Sprite(texture);
+
+        bkgd     = new Texture(Gdx.files.internal("android/assets/space/a.jpg"));
+
     }
 
     @Override
@@ -60,18 +64,18 @@ public class GameScreen extends Base2DScreen {
 
         if (keycode == 19) {
             System.out.printf("Поднимаемся keyDown code[%d]\n", keycode);
-            dvy += 0.05f;
+            dvy += 0.09f;
         } else if (keycode == 20) {
             System.out.printf("Опускаемся keyDown code[%d]\n", keycode);
-            dvy -= 0.05f;
+            dvy -= 0.09f;
         }
 
         if (keycode == 22) {
             System.out.printf("Вправо keyDown code[%d]\n", keycode);
-            dvx += 0.05f;
+            dvx += 0.09f;
         } else if (keycode == 21) {
             System.out.printf("Влево keyDown code[%d]\n", keycode);
-            dvx -= 0.05f;
+            dvx -= 0.09f;
         }
 
 
@@ -81,12 +85,17 @@ public class GameScreen extends Base2DScreen {
 
     @Override
     public void render(float delta) {
-        super.render(delta);
+         super.render(delta);
+
+        // gl - Interface wrapping all the methods of OpenGL ES
+        //
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
 
         batch.draw(bkgd, -1.0f, -1.0f, 2.0f, 2.0f);
-        batch.draw(heroShip, dvx, dvy, 0.5f, 0.5f);
+        batch.draw(heroShip, dvx, dvy, 0.3f, 0.3f);
 
         batch.end();
 
