@@ -5,6 +5,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.InputProcessor;
+import com.shako.game.engine.stats.GameAppStats;
 
 
 /**
@@ -20,8 +21,12 @@ public class Base2DScreen implements Screen, InputProcessor {
     protected final Game game;
 
     /** */
+    private GameAppStats gameAppStats = new GameAppStats();
+
+    /** */
     public Base2DScreen(Game game) {
         this.game = game;
+        gameAppStats.start();
     }
 
     @Override
@@ -62,7 +67,7 @@ public class Base2DScreen implements Screen, InputProcessor {
 
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
-        System.out.printf("mouseMoved  x:%d y:%d\n", screenX ,screenY);
+//        System.out.printf("mouseMoved  x:%d y:%d\n", screenX ,screenY);
         return false;
     }
 
@@ -83,6 +88,9 @@ public class Base2DScreen implements Screen, InputProcessor {
 
     @Override
     public void render(float delta) {
+
+//        Gdx.graphics;
+        System.out.println(Gdx.graphics.getGLVersion());
 
     }
 

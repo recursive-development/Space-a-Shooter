@@ -1,10 +1,13 @@
 package com.shako.spaceshooter.screens.game;
 
 // --- libGDX ---
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+
 
 // --- Customs ---
 import com.shako.game.engine.Base2DScreen;
@@ -15,6 +18,11 @@ import com.shako.game.engine.Base2DScreen;
  */
 
 public class GameScreen extends Base2DScreen {
+
+    /** */
+    private Label
+            label01,
+            label02;
 
     /** */
     private SpriteBatch batch;
@@ -81,6 +89,8 @@ public class GameScreen extends Base2DScreen {
         batch.draw(heroShip, dvx, dvy, 0.5f, 0.5f);
 
         batch.end();
+
+
     }
 
     @Override
