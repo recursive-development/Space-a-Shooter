@@ -16,6 +16,9 @@ public class GameAppStats extends Thread {
             memUsageNativeHeap;
 
     /** */
+    private String openGlVersion;
+
+    /** */
     private int
             width,
             height;
@@ -28,6 +31,8 @@ public class GameAppStats extends Thread {
     public GameAppStats() {
 
         setDaemon(true);
+
+        openGlVersion      = Gdx.graphics.getGLVersion().getVendorString();
 
     } // GameAppStats()
 
@@ -53,6 +58,7 @@ public class GameAppStats extends Thread {
             case Desktop:
                 System.out.printf("Java heap: %d\n", memUsageJavaHeap);
                 System.out.printf("Java heap (native): %d\n", memUsageNativeHeap);
+                System.out.printf("OpenGL vendor: %s\n", openGlVersion);
                 break;
             case Android:
                 // System.out.printf("Android API version: %d\n", Gdx.app.getVersion());
@@ -70,11 +76,13 @@ public class GameAppStats extends Thread {
     public void run() {
         super.run();
 
-        while (true) {
+        show();
 
-            getStats();
-            // show();
-        }
+//        while (true) {
+//
+//            getStats();
+//            // show();
+//        }
     } // run()
 
     /** */
