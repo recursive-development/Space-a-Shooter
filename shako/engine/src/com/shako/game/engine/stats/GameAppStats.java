@@ -16,6 +16,15 @@ public class GameAppStats extends Thread {
             memUsageNativeHeap;
 
     /** */
+    private int
+            width,
+            height;
+
+    /** */
+    private int fps;
+    private float delta;
+
+    /** */
     public GameAppStats() {
 
         setDaemon(true);
@@ -24,8 +33,14 @@ public class GameAppStats extends Thread {
 
     /** */
     private void getStats() {
-        memUsageJavaHeap = Gdx.app.getJavaHeap();
+
+        memUsageJavaHeap   = Gdx.app.getJavaHeap();
         memUsageNativeHeap = Gdx.app.getNativeHeap();
+
+        width  = Gdx.graphics.getWidth();
+        height = Gdx.graphics.getHeight();
+        fps    = Gdx.graphics.getFramesPerSecond();
+        delta  = Gdx.graphics.getDeltaTime();
     } // getStats()
 
     /** */
@@ -62,7 +77,6 @@ public class GameAppStats extends Thread {
         }
     } // run()
 
-
     /** */
     public long getMemUsageJavaHeap() {
         return memUsageJavaHeap;
@@ -72,4 +86,24 @@ public class GameAppStats extends Thread {
     public long getMemUsageNativeHeap() {
         return memUsageNativeHeap;
     } // getMemUsageNativeHeap()
+
+    /** */
+    public int getWidth() {
+        return width;
+    } // getWidth()
+
+    /** */
+    public int getHeight() {
+        return height;
+    } // getHeight()
+
+    /** */
+    public int getFps() {
+        return fps;
+    } // getFps()
+
+    /** */
+    public float getDelta() {
+        return delta;
+    } // getDelta()
 } // GameAppStats
