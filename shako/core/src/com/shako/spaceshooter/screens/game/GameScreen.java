@@ -3,6 +3,7 @@ package com.shako.spaceshooter.screens.game;
 // --- libGDX ---
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -60,32 +61,14 @@ public class GameScreen extends Base2DScreen {
     }
 
     @Override
-    public boolean keyDown(int keycode) {
-
-        if (keycode == 19) {
-            System.out.printf("Поднимаемся keyDown code[%d]\n", keycode);
-            dvy += 0.09f;
-        } else if (keycode == 20) {
-            System.out.printf("Опускаемся keyDown code[%d]\n", keycode);
-            dvy -= 0.09f;
-        }
-
-        if (keycode == 22) {
-            System.out.printf("Вправо keyDown code[%d]\n", keycode);
-            dvx += 0.09f;
-        } else if (keycode == 21) {
-            System.out.printf("Влево keyDown code[%d]\n", keycode);
-            dvx -= 0.09f;
-        }
-
-
-
-        return false;
-    }
-
-    @Override
     public void render(float delta) {
          super.render(delta);
+
+
+        if ( Gdx.input.isKeyPressed(Input.Keys.UP) )    dvy += 0.03f;
+        if ( Gdx.input.isKeyPressed(Input.Keys.DOWN) )  dvy -= 0.03f;
+        if ( Gdx.input.isKeyPressed(Input.Keys.LEFT) )  dvx -= 0.03f;
+        if ( Gdx.input.isKeyPressed(Input.Keys.RIGHT) ) dvx += 0.03f;
 
         // gl - Interface wrapping all the methods of OpenGL ES
         //
@@ -96,6 +79,7 @@ public class GameScreen extends Base2DScreen {
 
         batch.draw(bkgd, -1.0f, -1.0f, 2.0f, 2.0f);
         batch.draw(heroShip, dvx, dvy, 0.3f, 0.3f);
+        //System.out.printf("heroship coordinates [%.1f %.1f]\n", heroShip.getOriginX(), heroShip.getOriginY());
 
         batch.end();
 
